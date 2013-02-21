@@ -1,0 +1,17 @@
+{
+	"name": "bazo/elastic-browser",
+	"description": "Elasticsearch data browser",
+	"authors": [
+		{
+			"name": "Martin Bažík",
+			"homepage": "http://bazo.sk"
+		}
+	],
+	"require": {
+		"php": ">= 5.4.0",
+		"nette/nette": "@dev",
+        "ruflin/Elastica": "@dev",
+        "kdyby/bootstrap-form-renderer": "@dev",
+        "symfony/console": "@dev"
+	}
+}
