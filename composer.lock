@@ -1,5 +1,5 @@
 {
-    "hash": "8f14f7980b647aa9ccc535be26cd72dc",
+    "hash": "eae12281875ccc0a27097d17bcc3edb0",
     "packages": [
         {
             "name": "kdyby/bootstrap-form-renderer",
@@ -129,16 +129,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruflin/Elastica.git",
-                "reference": "11c7dc6f45cd68ec97b30eaf3f886dab8d1a874e"
+                "reference": "3d4ae6c40e05310259962049cb735effa3fe6a98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/11c7dc6f45cd68ec97b30eaf3f886dab8d1a874e",
-                "reference": "11c7dc6f45cd68ec97b30eaf3f886dab8d1a874e",
+                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/3d4ae6c40e05310259962049cb735effa3fe6a98",
+                "reference": "3d4ae6c40e05310259962049cb735effa3fe6a98",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.3"
             },
             "require-dev": {
                 "munkie/elasticsearch-thrift-php": "1.4.*",
@@ -170,7 +170,58 @@
                 "client",
                 "search"
             ],
-            "time": "2013-02-21 08:59:19"
+            "time": "2013-02-21 17:40:14"
+        },
+        {
+            "name": "rych/phpass",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rchouinard/phpass.git",
+                "reference": "565df4bb93fe8926ae976ce975bfc89d782d0bf7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rchouinard/phpass/zipball/565df4bb93fe8926ae976ce975bfc89d782d0bf7",
+                "reference": "565df4bb93fe8926ae976ce975bfc89d782d0bf7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.7"
+            },
+            "suggest": {
+                "ext-hash": "Some modules and features may require the HASH Message Digest Framework extension in order to work.",
+                "ext-openssl": "The OpenSSL extension is used as a secure source of random data."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Phpass": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Chouinard",
+                    "email": "rchouinard@gmail.com",
+                    "homepage": "http://ryanchouinard.com"
+                }
+            ],
+            "description": "PHP Password Library: Easy, secure password management for PHP",
+            "homepage": "https://github.com/rchouinard/phpass",
+            "keywords": [
+                "cryptography",
+                "password"
+            ],
+            "time": "2012-10-12 01:17:51"
         },
         {
             "name": "symfony/console",
@@ -218,6 +269,60 @@
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
             "time": "2013-01-31 21:39:01"
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/EventDispatcher",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/EventDispatcher.git",
+                "reference": "2e1fce7bb3ea06d9e42756f1dd3edf966420c755"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/2e1fce7bb3ea06d9e42756f1dd3edf966420c755",
+                "reference": "2e1fce7bb3ea06d9e42756f1dd3edf966420c755",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/dependency-injection": ">=2.0,<3.0"
+            },
+            "suggest": {
+                "symfony/dependency-injection": "2.2.*",
+                "symfony/http-kernel": "2.2.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\EventDispatcher\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony EventDispatcher Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-02-11 11:27:01"
         }
     ],
     "packages-dev": null,
@@ -229,6 +334,8 @@
         "nette/nette": 20,
         "ruflin/elastica": 20,
         "kdyby/bootstrap-form-renderer": 20,
-        "symfony/console": 20
+        "symfony/console": 20,
+        "rych/phpass": 20,
+        "symfony/event-dispatcher": 20
     }
 }

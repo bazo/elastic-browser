@@ -2,8 +2,15 @@
 
 {block #content}
 
-<h1 n:block=title>Sign in</h1>
 
-{control signInForm}
+{var $title = 'Sign in'}
 
-{* or use {include '../components/form.latte', form => $presenter[signInForm]} *}
+{form signInForm class => 'form-signin'}
+	<h2 class="form-signin-heading">Please sign in</h2>
+	<input n:input="login" class="input-block-level" placeholder="login">
+	<input n:input="password" class="input-block-level" placeholder="password">
+	<label class="checkbox">
+		<input n:input="remember" value="remember-me"> Remember me
+	</label>
+	<input n:input="btnSubmit" class="btn btn-large btn-primary" type="submit">
+{/form}

@@ -1,0 +1,14 @@
+services:
+	#commands
+	createUser:
+		class: EB\Console\Commands\CreateUser
+		tags: [consoleCommand]
+
+	#helpers
+	dialog:
+		class: \Symfony\Component\Console\Helper\DialogHelper
+		tags: [consoleHelper]
+
+	progress:
+		class: \Symfony\Component\Console\Helper\ProgressHelper
+		tags: [consoleHelper]

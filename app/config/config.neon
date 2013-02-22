@@ -20,10 +20,20 @@ common:
 
 
 	services:
-		authenticator: Authenticator
+
+		#events
+		mediator:
+			class: Symfony\Component\EventDispatcher\EventDispatcher
+			tags: ['mediator']
+
+		#security
+		hasher: Phpass\Hash
+
 		routerFactory: RouterFactory
 		router: @routerFactory::createRouter
 
+		#users
+		users: \Eb\Users\Users(%appDir%/config/app.neon, ...)
 
 	factories:
 

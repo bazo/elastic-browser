@@ -10,8 +10,10 @@
 	"require": {
 		"php": ">= 5.4.0",
 		"nette/nette": "@dev",
-        "ruflin/Elastica": "@dev",
-        "kdyby/bootstrap-form-renderer": "@dev",
-        "symfony/console": "@dev"
+		"ruflin/Elastica": "@dev",
+		"kdyby/bootstrap-form-renderer": "@dev",
+		"symfony/console": "@dev",
+		"rych/phpass": "2.1.*@dev",
+		"symfony/event-dispatcher": "2.3.*@dev"
 	}
 }
