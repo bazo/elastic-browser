@@ -21,6 +21,8 @@ common:
 
 	services:
 
+		elastica: Elastica\Client
+
 		#events
 		mediator:
 			class: Symfony\Component\EventDispatcher\EventDispatcher
@@ -35,6 +37,11 @@ common:
 		#users
 		users: \Eb\Users\Users(%appDir%/config/app.neon, ...)
 
+		#servers
+		servers: \Eb\Servers\Servers(%appDir%/config/app.neon)
+
+		#http
+		httpClient: Guzzle\Http\Client
 	factories:
 
 

@@ -1,0 +1,14 @@
+{extends ../@layout.latte}
+
+{#content}
+<ul class="nav nav-tabs">
+	<li n:class="$presenter->isLinkCurrent('servers') ? active">
+		<a n:href="servers">Servers</a>
+	</li>
+
+	<li n:class="$presenter->isLinkCurrent('users') ? active">
+		<a n:href="servers">Users</a>
+	</li>
+</ul>
+{include #page}
+{/#}

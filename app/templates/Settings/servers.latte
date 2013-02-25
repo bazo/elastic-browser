@@ -1,0 +1,40 @@
+{dump $servers}
+
+
+{#page}
+	<a href="#formAddServer" role="button" class="btn btn-primary" data-toggle="modal">Add server</a>
+	{include #formAddServer}
+
+	<br>
+
+	<div n:foreach="$servers as $label => $server" class="server well">
+		hostname: {$server['hostname']}<br>
+		name: {$server['name']}<br>
+		version: {$server['version']}<br>
+	</div>
+{/#}
+
+
+{define formAddServer}
+<div class="modal hide fade" id="formAddServer">
+	{form formAddServer}
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Add server</h3>
+	</div>
+	<div class="modal-body">
+		<p>One fine body…</p>
+		<label n:label="label">Label:</label>
+		<input n:input="label">
+		<label n:label="hostname">Hostname:</label>
+		<input n:input="hostname">
+		<label n:label="port">Port:</label>
+		<input n:input="port">
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		<input n:input="btnSubmit" class="btn btn-primary">
+	</div>
+	{/form}
+</div>
+{/define}

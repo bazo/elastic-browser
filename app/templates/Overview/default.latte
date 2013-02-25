@@ -1,0 +1,33 @@
+{#content}
+
+{dump $nodes}
+{dump $cluster}
+{dump $state}
+
+<span class="label label-info">Cluster</span>
+<div class="well">
+	<div class="node" n:foreach="$nodes as $key => $node">
+		{$node['name']}@{$node['hostname']} {$key} <br>
+		transport address: {$node['transport_address']}<br>
+		http address: {$node['http_address']}<br>
+	</div>
+
+	<table>
+
+		<tr>
+			<th>
+				{*empty corner*}
+			</th>
+
+			<th n:foreach="$state['metadata']['indices'] as $index => $indexData">
+				<div class="index">
+					{$index} state: {$indexData['state']}
+					{dump $indexData}
+				</div>
+			</th>
+		</tr>
+
+	</table>
+</div>
+
+{/#}

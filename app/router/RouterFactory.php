@@ -17,8 +17,8 @@ class RouterFactory
 	public function createRouter()
 	{
 		$router = new RouteList();
-		$router[] = new Route('index.php', 'Homepage:default', Route::ONE_WAY);
-		$router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
+		$router[] = new Route('index.php', 'overview:default', Route::ONE_WAY);
+		$router[] = new Route('<presenter>/<action>[/<id>]', 'overview:default');
 		return $router;
 	}
 

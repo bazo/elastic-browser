@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Martin Bažík">
 
+	<link href="{$basePath}/css/spruce.css" rel="stylesheet">
     <link href="{$basePath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{$basePath}/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="{$basePath}/css/app.css" rel="stylesheet">
@@ -14,7 +15,7 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -25,10 +26,20 @@
           <a class="brand" href="#">Elastic Browser</a>
           <div class="nav-collapse collapse" n:if="$user->isLoggedIn()">
             <ul class="nav">
-              <li class="active"><a href="#">Overview</a></li>
+              <li n:class="$presenter->isLinkCurrent(':overview:*') ? active"><a n:href=":overview:">Overview</a></li>
               <li><a href="#about">Browser</a></li>
               <li><a href="#contact">Query</a></li>
+
             </ul>
+
+			{form formSelectServer class=> 'form select-server form-inline'}
+				{input server}{input btnSubmit}
+			{/form}
+
+			<ul class="nav pull-right">
+				<li n:class="$presenter->isLinkCurrent(':settings:*') ? active"><a n:href=":settings:servers">Settings</a></li>
+			</ul>
+
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -39,11 +50,16 @@
       {snippet flashes}
 			<div n:foreach="$flashes as $flash" class="flash alert alert-{$flash->type} {$flash->type}">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong>{$flash->type|translateFlashType|capitalize}</strong><br>{$flash->message}
+				<strong>{$flash->type}</strong><br>{$flash->message}
 			</div>
 		{/snippet}
 
-
+		{dump $health}
+	<div class="well">
+		Current server: {$currentServer->name}@{$currentServer->hostname} version: {$currentServer->version}
+		health: <span n:class="$health['status'] === 'green' ? 'badge-success' : ($health['status'] === 'yellow' ? 'badge-warning' : 'badge-error'), 'badge'">
+			{$health['status']} ({$health['number_of_nodes']}, {$health['active_primary_shards']})</span>
+	</div>
       {include #content}
 
     </div> <!-- /container -->
@@ -52,6 +68,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/bootstrap.min.js"></script>
     <script src="{$basePath}/js/app.js"></script>
 
 
