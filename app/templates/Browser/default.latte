@@ -1,0 +1,24 @@
+{#content}
+<div class="row">
+	<div class="span3">
+		<div class="row">
+			<h3>Indices</h3>
+			<ul n:inner-foreach="$indices as $index => $data">
+				<li><a n:if="!in_array($index, $selectedIndices)" n:href="addIndex! index => $index">{$index}</a>
+				<a n:if="in_array($index, $selectedIndices)" n:href="removeIndex! index => $index">{$index}</a></li>
+			</ul>
+		</div>
+
+		<div class="row">
+			<h3>Types</h3>
+			<ul n:inner-foreach="$types as $type">
+				<li><a href="#">{$type}</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="span9">
+	asdasd
+	</div>
+</div>
+{/#}

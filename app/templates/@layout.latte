@@ -15,7 +15,7 @@
 
   <body>
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -27,7 +27,7 @@
           <div class="nav-collapse collapse" n:if="$user->isLoggedIn()">
             <ul class="nav">
               <li n:class="$presenter->isLinkCurrent(':overview:*') ? active"><a n:href=":overview:">Overview</a></li>
-              <li><a href="#about">Browser</a></li>
+              <li n:class="$presenter->isLinkCurrent(':browser:*') ? active"><a n:href=":browser:">Browser</a></li>
               <li><a href="#contact">Query</a></li>
 
             </ul>
@@ -59,6 +59,9 @@
 		Current server: {$currentServer->name}@{$currentServer->hostname} version: {$currentServer->version}
 		health: <span n:class="$health['status'] === 'green' ? 'badge-success' : ($health['status'] === 'yellow' ? 'badge-warning' : 'badge-error'), 'badge'">
 			{$health['status']} ({$health['number_of_nodes']}, {$health['active_primary_shards']})</span>
+		<div class="pull-right">
+			<a n:href="refresh!" class="btn btn-primary">Refresh</a>
+		</div>
 	</div>
       {include #content}
 
